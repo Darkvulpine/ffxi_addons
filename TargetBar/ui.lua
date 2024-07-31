@@ -192,7 +192,7 @@ local ui =
 		for i = 1, #settings.ActionIcons do
 			this.MT_Action[ i ] = Images.new( this:GetImageStyle(
 				settings.ActionIcons[ i ],
-				16, 16,
+				24, 24,
 				false	-- 初期ではドラッグ不可
 			) )
 		end

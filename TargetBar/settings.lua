@@ -34,14 +34,14 @@ local settings =
 		Arrow = 'pointer_s.png',
 	},
 
-	-- アクションアイコン
+	-- Action Icons
 	ActionIcons = {
-		'Action1.png',	-- アクティブ
-		'Action2.png',	-- ノンアクティブ・リンク
-		'Action3.png',	-- アクティブ・リンク
-		'Action4.png',	-- 条件アクティブ
-		'Action5.png',	-- 条件アクティブ・リンク
-		'Action6.png',	-- 不明
+		'Action1.png',	-- Active
+		'Action2.png',	-- Non-active 	-	Links
+		'Action3.png',	-- Active 		- 	Links
+		'Action4.png',	-- Condition Active
+		'Action5.png',	-- Condition Active Links
+		'Action6.png',	-- Unsure
 	},
 
 	-- 効果アイコンの画像ファイルパス

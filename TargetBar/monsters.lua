@@ -2,22 +2,28 @@
 
 -- http://ff11db.sakura.ne.jp/database/
 -- http://ff11.s288.xrea.com/
--- タイプ 0=ノンアク・1=アク・2=ノンアク&リンク・3=アク&リンク・4=条件アク・5=条件アク&リンク
+-- Type 
+-- 0 = Non-active, 
+-- 1 = Active, 
+-- 2 = Non-active & Link, 
+-- 3 = Active & Link, 
+-- 4 = Conditional Active, 
+-- 5 = Conditional Active & Link
 
 
--- モンスター
+-- monster
 local Nms =
 {
 	-----------------------------------------------------------
-	-- ロンフォール
+	-- Ronfaure
 
-	-- オリジナル
+	-- Original
 
-	-- フィールド
+	-- Field
 
-	-- 西ロンフォール
+	-- West Ronfaure
 	[ 100 ] = {
-		[ "Bomb"					] = { "ボム",								1 },
+		[ "Bomb"					] = { "Weak: Fire",								1 },
 		[ "Carrion Worm"			] = { "キャリオンワーム",					0 },
 		[ "Ding Bats"				] = { "ディングバッツ",						0 },
 		[ "Enchanted Bones"			] = { "エンチャンテッドボーンズ",			1 },
@@ -38,8 +44,8 @@ local Nms =
 		[ "River Crab"				] = { "リバークラブ",						0 },
 		[ "Scarab Beetle"			] = { "スカラブビートル",					2 },
 		[ "Tainted Hound"			] = { "テインテッドハウンド",				1 },
-		[ "Tunnel Worm"				] = { "トンネルワーム",						0 },
-		[ "Wild Rabbit"				] = { "ワイルドラビット",					0 },
+		[ "Tunnel Worm"				] = { "Weak: Wind, Light",						0 },
+		[ "Wild Rabbit"				] = { "Weak: Water, Lightning, Dark",			0 },
 		[ "Wild Sheep"				] = { "ワイルドシープ",						2 },
 
 	},
@@ -2921,6 +2927,32 @@ local Nms =
 		[ "Tavnazian Sheep"			] = { "タブナジアンシープ",					2 },
 		[ "Vampire Bat"				] = { "ヴァンパイアバット",					2 },
 		[ "Wingrats"				] = { "ウィングラッツ",						2 },
+
+	},
+	-- Escha - Zi'Tah
+	[  288 ] = {
+		[ "Eschan Bugard"			] = { "Hear",				1 },
+		[ "Eschan Coeurl"			] = { "Sight",				1 },
+		[ "Eschan Corse"			] = { "Hear",				1 },
+		[ "Eschan Crab"	 			] = { "Hear",				1 },
+		[ "Eschan Crawler"			] = { "Hear",				2 },
+		[ "Eschan Dhalmel"			] = { "Sight",				2 },
+		[ "Eschan Goobbue"			] = { "Hear",				1 },
+		[ "Eschan Mosquito"			] = { "Sight",				1 },
+		[ "Eschan Obdella"			] = { "Hear, Weak Light",	2 },
+		[ "Eschan Opo-opo"			] = { "Sight",				2 },
+		[ "Eschan Pugil"			] = { "Hear",				1 },
+		[ "Eschan Puk"				] = { "Sight",				1 },
+		[ "Eschan Shadow Dragon"	] = { "Hear",				1 },
+		[ "Eschan Snapweed"			] = { "Hear",				1 },
+		[ "Eschan Sorcerer"			] = { "Hear",				1 },
+		[ "Eschan Tarichuk"			] = { "Sight",				2 },
+		[ "Eschan Vulture"			] = { "Hear",				3 },
+		[ "Eschan Warrior"			] = { "Hear",				1 },
+		[ "Eschan Wasp"				] = { "Sight",				2 },
+		[ "Eschan Weapon"			] = { "Hear",				4 },
+		[ "Eschan Worm"				] = { "Hear, Weak: Wind",	3 },
+		[ "Eschan Yztarg"			] = { "Sight",				1 },
 
 	},
 

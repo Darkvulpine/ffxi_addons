@@ -14,10 +14,10 @@
             <Y>0.164</Y>
         </Anchor>
         <ArrowSize>
-            <Height>11</Height>
-            <Width>16</Width>
+            <Height>13</Height>
+            <Width>19</Width>
         </ArrowSize>
-        <Draggable>true</Draggable>
+        <Draggable>false</Draggable>
         <EffectEnabled>
             <1>67</1>
             <2>36</2>
@@ -2889,24 +2889,24 @@
         <MTInfo>
             <Action>
                 <Offset>
-                    <X>-68</X>
-                    <Y>-16</Y>
+                    <X>-80</X>
+                    <Y>-24</Y>
                 </Offset>
             </Action>
             <Description>
                 <Offset>
                     <X>0</X>
-                    <Y>4</Y>
+                    <Y>9</Y>
                 </Offset>
-                <Size>10</Size>
+                <Size>8</Size>
             </Description>
             <FrameSize>
-                <Height>5</Height>
-                <Width>400</Width>
+                <Height>9</Height>
+                <Width>450</Width>
             </FrameSize>
             <Health>
                 <Offset>
-                    <X>40</X>
+                    <X>36</X>
                     <Y>-16</Y>
                 </Offset>
                 <Size>10</Size>
@@ -2914,34 +2914,34 @@
             <Level>
                 <Offset>
                     <X>4</X>
-                    <Y>-16</Y>
+                    <Y>-21</Y>
                 </Offset>
-                <Size>10</Size>
+                <Size>16</Size>
             </Level>
             <Name>
                 <Offset>
                     <X>40</X>
-                    <Y>-19</Y>
+                    <Y>-18</Y>
                 </Offset>
                 <Size>12</Size>
             </Name>
             <Rank>
                 <Offset>
-                    <X>-68</X>
-                    <Y>-16</Y>
+                    <X>-65</X>
+                    <Y>-10</Y>
                 </Offset>
                 <Size>12</Size>
             </Rank>
             <Ruby>
                 <Offset>
                     <X>40</X>
-                    <Y>-26</Y>
+                    <Y>-29</Y>
                 </Offset>
                 <Size>6</Size>
             </Ruby>
             <SideSize>
-                <Height>5</Height>
-                <Width>2</Width>
+                <Height>10</Height>
+                <Width>3</Width>
             </SideSize>
         </MTInfo>
         <Offset>
@@ -2955,14 +2955,14 @@
         <STInfo>
             <Action>
                 <Offset>
-                    <X>-68</X>
-                    <Y>-16</Y>
+                    <X>-78</X>
+                    <Y>-24</Y>
                 </Offset>
             </Action>
             <Description>
                 <Offset>
                     <X>0</X>
-                    <Y>4</Y>
+                    <Y>6</Y>
                 </Offset>
                 <Size>10</Size>
             </Description>
@@ -2979,7 +2979,7 @@
             </Health>
             <Level>
                 <Offset>
-                    <X>4</X>
+                    <X>6</X>
                     <Y>-16</Y>
                 </Offset>
                 <Size>10</Size>
@@ -2987,7 +2987,7 @@
             <Name>
                 <Offset>
                     <X>40</X>
-                    <Y>-19</Y>
+                    <Y>-18</Y>
                 </Offset>
                 <Size>12</Size>
             </Name>
@@ -2998,16 +2998,16 @@
             <Rank>
                 <Offset>
                     <X>-68</X>
-                    <Y>-16</Y>
+                    <Y>-10</Y>
                 </Offset>
-                <Size>12</Size>
+                <Size>16</Size>
             </Rank>
             <Ruby>
                 <Offset>
                     <X>0</X>
-                    <Y>-16</Y>
+                    <Y>-15</Y>
                 </Offset>
-                <Size>6</Size>
+                <Size>9</Size>
             </Ruby>
             <SideSize>
                 <Height>5</Height>
@@ -3042,4 +3042,10 @@
             <Width>1280</Width>
         </UIScreen>
     </dainopu>
+    <karisha>
+        <UIScreen>
+            <Height>1080</Height>
+            <Width>1920</Width>
+        </UIScreen>
+    </karisha>
 </settings>

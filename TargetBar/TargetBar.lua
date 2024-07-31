@@ -315,7 +315,6 @@ local addon =
 		if( targetDetail ~= nil ) then
 			if( targetDetail.spawn_type == 13 and targetDetail.in_party == true ) then
 				isPlayerMember = true
---				PrintFF11( "Party : " .. targetDetail.name .. ' ' .. targetDetail.spawn_type .. ' ' .. tostring( targetDetail.in_party ) )
 			end
 		end
 		return isPlayerMember
@@ -469,7 +468,6 @@ local addon =
 					effectId = target.actions[ i ].param
 				end
 			end
-			PrintFF11( "[Unknown Category]" .. ' a ' .. this:GetTargetName( actor.actor_id ) .. ' c ' .. actor.category .. ' p ' .. actor.param .. ' tc ' .. #actor.targets .. ' m ' .. message .. ' e ' .. effectId )
 		end
 
 
@@ -494,7 +492,7 @@ local addon =
 							end
 							if( this.effectiveTargets[ targetId ][   4 ] == nil ) then
 								-- 麻痺状態にする(ひとまず60秒)
-								PrintFF11( this:GetTargetName( targetId ) .. "を麻痺状態にする!" )
+								--PrintFF11( this:GetTargetName( targetId ) .. "を麻痺状態にする!" )
 								this.effectiveTargets[ targetId ][   4 ] = { EndTime = os.clock() + 60, FromPlayer = false }
 							end
 						end
@@ -581,7 +579,7 @@ local addon =
 								-- 355 遠隔攻撃の効果なし
 							else
 								-- その他
-								PrintFF11( "[UM] c[" .. actor.category .. ']  m ' .. message .. ' a ' .. this:GetTargetName( actor.actor_id ) .. ' t ' ..  this:GetTargetName( target.id ) .. ' e ' .. effectId .. ' ' .. tostring( i ) .. '/' .. #target.actions )
+								--PrintFF11( "[UM] c[" .. actor.category .. ']  m ' .. message .. ' a ' .. this:GetTargetName( actor.actor_id ) .. ' t ' ..  this:GetTargetName( target.id ) .. ' e ' .. effectId .. ' ' .. tostring( i ) .. '/' .. #target.actions )
 							end
 
 							-- 追加効果
@@ -597,7 +595,7 @@ local addon =
 
 								if( T{ 160, 164 }:contains( hae_message ) == true ) then
 									-- <有効>
-									PrintFF11( "[追加効果発動] c[" .. actor.category .. ']  m ' .. hae_message .. ' e ' .. en .. '(' .. hae_effectId .. ')' .. ' a ' .. this:GetTargetName( actor.actor_id ) .. ' t ' ..  this:GetTargetName( target.id ) .. ' ' .. tostring( i ) .. '/' .. #target.actions )
+									--PrintFF11( "[追加効果発動] c[" .. actor.category .. ']  m ' .. hae_message .. ' e ' .. en .. '(' .. hae_effectId .. ')' .. ' a ' .. this:GetTargetName( actor.actor_id ) .. ' t ' ..  this:GetTargetName( target.id ) .. ' ' .. tostring( i ) .. '/' .. #target.actions )
 									if( this.effectiveTargets[ target.id ] == nil ) then
 										this.effectiveTargets[ target.id ] = {}
 									end
@@ -631,7 +629,7 @@ local addon =
 									if( Resources.buffs[ hae_effectId ] ~= nil ) then
 										en = Resources.buffs[ hae_effectId ].name
 									end
-									PrintFF11( "[HAE] c[" .. actor.category .. ']  m ' .. hae_message .. ' e ' .. en .. '(' .. hae_effectId .. ')' .. ' a ' .. this:GetTargetName( actor.actor_id ) .. ' t ' ..  this:GetTargetName( target.id ) .. ' ' .. tostring( i ) .. '/' .. #target.actions )
+									--PrintFF11( "[HAE] c[" .. actor.category .. ']  m ' .. hae_message .. ' e ' .. en .. '(' .. hae_effectId .. ')' .. ' a ' .. this:GetTargetName( actor.actor_id ) .. ' t ' ..  this:GetTargetName( target.id ) .. ' ' .. tostring( i ) .. '/' .. #target.actions )
 								end
 							end
 
@@ -652,7 +650,7 @@ local addon =
 									-- <無効>
 									--  33 カウンター
 									if( hse_message == 33 ) then
-										PrintFF11( "[カウンター発動] c[" .. actor.category .. ']  m ' .. hse_message .. ' e ' .. en .. '(' .. hse_effectId .. ')' .. ' a ' .. this:GetTargetName( actor.actor_id ) .. ' t ' ..  this:GetTargetName( target.id ) .. ' ' .. tostring( i ) .. '/' .. #target.actions )
+										--PrintFF11( "[カウンター発動] c[" .. actor.category .. ']  m ' .. hse_message .. ' e ' .. en .. '(' .. hse_effectId .. ')' .. ' a ' .. this:GetTargetName( actor.actor_id ) .. ' t ' ..  this:GetTargetName( target.id ) .. ' ' .. tostring( i ) .. '/' .. #target.actions )
 									end
 									--  44 スパイクダメージ
 								else
@@ -661,7 +659,7 @@ local addon =
 									if( Resources.buffs[ hse_effectId ] ~= nil ) then
 										en = Resources.buffs[ hse_effectId ].name
 									end
-									PrintFF11( "[HSE] c[" .. actor.category .. ']  m ' .. hse_message .. ' e ' .. en .. '(' .. hse_effectId .. ')' .. ' a ' .. this:GetTargetName( actor.actor_id ) .. ' t ' ..  this:GetTargetName( target.id ) .. ' ' .. tostring( i ) .. '/' .. #target.actions )
+									--PrintFF11( "[HSE] c[" .. actor.category .. ']  m ' .. hse_message .. ' e ' .. en .. '(' .. hse_effectId .. ')' .. ' a ' .. this:GetTargetName( actor.actor_id ) .. ' t ' ..  this:GetTargetName( target.id ) .. ' ' .. tostring( i ) .. '/' .. #target.actions )
 								end
 							end
 
@@ -718,9 +716,9 @@ local addon =
 									sn = Resources.spells[ spellId ].name
 								end
 
-								if( spellId >=    1 and spellId <= 1019 and Spells[ spellId ] == nil ) then
-									PrintFF11( 'c[4]' .. ' s ' .. sn .. '(' .. spellId .. ') ' .. '→' .. ' e ' .. en .. '(' .. effectId .. ') ' .. ' m ' .. message .. ' a ' .. this:GetTargetName( actor.actor_id ) .. ' t ' .. this:GetTargetName( target.id ) .. ' ' .. i .. '/' .. #target.actions )
-								end
+								--if( spellId >=    1 and spellId <= 1019 and Spells[ spellId ] == nil ) then
+									--PrintFF11( 'c[4]' .. ' s ' .. sn .. '(' .. spellId .. ') ' .. '→' .. ' e ' .. en .. '(' .. effectId .. ') ' .. ' m ' .. message .. ' a ' .. this:GetTargetName( actor.actor_id ) .. ' t ' .. this:GetTargetName( target.id ) .. ' ' .. i .. '/' .. #target.actions )
+								--end
 								-----------------------
 								
 								-- 追加効果
@@ -744,7 +742,7 @@ local addon =
 										if( Resources.buffs[ hae_effectId ] ~= nil ) then
 											en = Resources.buffs[ hae_effectId ].name
 										end
-										PrintFF11( "[HAE] c[" .. actor.category .. ']  m ' .. hae_message .. ' e ' .. en .. '(' .. hae_effectId .. ')' .. ' a ' .. this:GetTargetName( actor.actor_id ) .. ' t ' ..  this:GetTargetName( target.id ) .. ' ' .. tostring( i ) .. '/' .. #target.actions )
+										--PrintFF11( "[HAE] c[" .. actor.category .. ']  m ' .. hae_message .. ' e ' .. en .. '(' .. hae_effectId .. ')' .. ' a ' .. this:GetTargetName( actor.actor_id ) .. ' t ' ..  this:GetTargetName( target.id ) .. ' ' .. tostring( i ) .. '/' .. #target.actions )
 									end
 								end
 
@@ -769,7 +767,7 @@ local addon =
 										if( Resources.buffs[ hse_effectId ] ~= nil ) then
 											en = Resources.buffs[ hse_effectId ].name
 										end
-										PrintFF11( "[HSE] c[" .. actor.category .. ']  m ' .. hse_message .. ' e ' .. en .. '(' .. hse_effectId .. ')' .. ' a ' .. this:GetTargetName( actor.actor_id ) .. ' t ' ..  this:GetTargetName( target.id ) .. ' ' .. tostring( i ) .. '/' .. #target.actions )
+										--PrintFF11( "[HSE] c[" .. actor.category .. ']  m ' .. hse_message .. ' e ' .. en .. '(' .. hse_effectId .. ')' .. ' a ' .. this:GetTargetName( actor.actor_id ) .. ' t ' ..  this:GetTargetName( target.id ) .. ' ' .. tostring( i ) .. '/' .. #target.actions )
 									end
 								end
 
@@ -793,7 +791,7 @@ local addon =
 										-- effectId = 0 は失敗 message 84 は失敗
 										if this.effectiveTargets[ target.id ] then
 											-- 効果消失
-	--										PrintFF11( "[R]" .. en .. ' (' .. effectId .. ') ' .. " s " .. sn .. '(' .. spellId .. ') m ' .. message .. ' t ' .. target.id .. ' fp ' .. tostring( fromPlayer ) )
+	--										--PrintFF11( "[R]" .. en .. ' (' .. effectId .. ') ' .. " s " .. sn .. '(' .. spellId .. ') m ' .. message .. ' t ' .. target.id .. ' fp ' .. tostring( fromPlayer ) )
 											this.effectiveTargets[ target.id ][ effectId ] = nil
 										end
 									end
@@ -811,7 +809,7 @@ local addon =
 									end
 									if( this.effectiveTargets[ target.id ][   4 ] == nil ) then
 										-- 麻痺状態にする(ひとまず60秒)
-	--									PrintFF11( this:GetTargetName( targetId ) .. "を麻痺状態にする" )
+	--									--PrintFF11( this:GetTargetName( targetId ) .. "を麻痺状態にする" )
 										this.effectiveTargets[ target.id ][   4 ] = { EndTime = os.clock() + 60, FromPlayer = false }
 									end
 								elseif( T{   0,  31,  75,  78,  85,  93, 106, 114, 283, 284 }:contains( message ) == true ) then
@@ -826,7 +824,7 @@ local addon =
 									-- 283 効果なし
 									-- 284 レジストした
 								else
-									PrintFF11( "[UM] c[" .. actor.category .. "] e " .. en .. '(' .. effectId .. ') ' .. " s " .. sn .. '(' .. spellId .. ') m ' .. message .. ' a ' .. this:GetTargetName( actor.actor_id ) .. ' t ' ..  this:GetTargetName( target.id ) .. ' ' .. i .. '/' .. #target.actions )
+									--PrintFF11( "[UM] c[" .. actor.category .. "] e " .. en .. '(' .. effectId .. ') ' .. " s " .. sn .. '(' .. spellId .. ') m ' .. message .. ' a ' .. this:GetTargetName( actor.actor_id ) .. ' t ' ..  this:GetTargetName( target.id ) .. ' ' .. i .. '/' .. #target.actions )
 								end
 							end
 --						end
@@ -887,9 +885,9 @@ local addon =
 									sn = Resources.job_abilities[ abilityId ].name
 								end
 
-								if( abilityId >=    1 and abilityId <=  970 and Abilities[ abilityId ] == nil ) then
-									PrintFF11( 'c[' .. actor.category .. ']' .. ' s ' .. sn .. '(' .. abilityId .. ') ' .. '→' .. ' e ' .. en .. '(' .. effectId .. ') ' .. ' m ' .. message .. ' a ' .. this:GetTargetName( actor.actor_id ) .. ' t ' .. this:GetTargetName( target.id ) .. ' ' .. i .. '/' .. #target.actions )
-								end
+								--if( abilityId >=    1 and abilityId <=  970 and Abilities[ abilityId ] == nil ) then
+									--PrintFF11( 'c[' .. actor.category .. ']' .. ' s ' .. sn .. '(' .. abilityId .. ') ' .. '→' .. ' e ' .. en .. '(' .. effectId .. ') ' .. ' m ' .. message .. ' a ' .. this:GetTargetName( actor.actor_id ) .. ' t ' .. this:GetTargetName( target.id ) .. ' ' .. i .. '/' .. #target.actions )
+								--end
 								-----------------------
 
 								-- 追加効果
@@ -913,7 +911,7 @@ local addon =
 										if( Resources.buffs[ hae_effectId ] ~= nil ) then
 											en = Resources.buffs[ hae_effectId ].name
 										end
-										PrintFF11( "[HAE] c[" .. actor.category .. ']  m ' .. hae_message .. ' e ' .. en .. '(' .. hae_effectId .. ')' .. ' a ' .. this:GetTargetName( actor.actor_id ) .. ' t ' ..  this:GetTargetName( target.id ) .. ' ' .. tostring( i ) .. '/' .. #target.actions )
+										--PrintFF11( "[HAE] c[" .. actor.category .. ']  m ' .. hae_message .. ' e ' .. en .. '(' .. hae_effectId .. ')' .. ' a ' .. this:GetTargetName( actor.actor_id ) .. ' t ' ..  this:GetTargetName( target.id ) .. ' ' .. tostring( i ) .. '/' .. #target.actions )
 									end
 								end
 
@@ -938,7 +936,7 @@ local addon =
 										if( Resources.buffs[ hse_effectId ] ~= nil ) then
 											en = Resources.buffs[ hse_effectId ].name
 										end
-										PrintFF11( "[HSE] c[" .. actor.category .. ']  m ' .. hse_message .. ' e ' .. en .. '(' .. hse_effectId .. ')' .. ' a ' .. this:GetTargetName( actor.actor_id ) .. ' t ' ..  this:GetTargetName( target.id ) .. ' ' .. tostring( i ) .. '/' .. #target.actions )
+										--PrintFF11( "[HSE] c[" .. actor.category .. ']  m ' .. hse_message .. ' e ' .. en .. '(' .. hse_effectId .. ')' .. ' a ' .. this:GetTargetName( actor.actor_id ) .. ' t ' ..  this:GetTargetName( target.id ) .. ' ' .. tostring( i ) .. '/' .. #target.actions )
 									end
 								end
 
@@ -969,7 +967,7 @@ local addon =
 								elseif( T{ 0 }:contains( message ) == true ) then
 									-- 無視して良いメッセージ
 								else
-									PrintFF11( '[UM] c[' .. actor.category .. ']' .. ' s ' .. sn .. '(' .. abilityId .. ')' .. ' e ' .. en .. '(' .. effectId .. ')' .. ' m ' .. message .. ' a ' .. this:GetTargetName( actor.actor_id ) .. ' t ' ..  this:GetTargetName( target.id ) .. ' ' .. i .. '/' .. #target.actions )
+									--PrintFF11( '[UM] c[' .. actor.category .. ']' .. ' s ' .. sn .. '(' .. abilityId .. ')' .. ' e ' .. en .. '(' .. effectId .. ')' .. ' m ' .. message .. ' a ' .. this:GetTargetName( actor.actor_id ) .. ' t ' ..  this:GetTargetName( target.id ) .. ' ' .. i .. '/' .. #target.actions )
 								end
 							end
 						end
@@ -1051,7 +1049,7 @@ local addon =
 								end
 
 								if( skillId >=    1 and skillId <= max and Skills[ skillId ] == nil ) then
-									PrintFF11( 'c[' .. actor.category .. ']' .. ' s ' .. sn .. '(' .. skillId .. ')' .. ' e ' .. en .. '(' .. effectId .. ')' .. ' m ' .. message .. ' a ' .. this:GetTargetName( actor.actor_id ) .. ' t ' .. this:GetTargetName( target.id ) .. ' ' .. i .. '/' .. #target.actions )
+									--PrintFF11( 'c[' .. actor.category .. ']' .. ' s ' .. sn .. '(' .. skillId .. ')' .. ' e ' .. en .. '(' .. effectId .. ')' .. ' m ' .. message .. ' a ' .. this:GetTargetName( actor.actor_id ) .. ' t ' .. this:GetTargetName( target.id ) .. ' ' .. i .. '/' .. #target.actions )
 								end
 
 								-----------------------
@@ -1091,7 +1089,7 @@ local addon =
 										if( Resources.buffs[ hae_effectId ] ~= nil ) then
 											en = Resources.buffs[ hae_effectId ].name
 										end
-										PrintFF11( "[HAE] c[" .. actor.category .. ']  m ' .. hae_message .. ' e ' .. en .. '(' .. hae_effectId .. ')' .. ' a ' .. this:GetTargetName( actor.actor_id ) .. ' t ' ..  this:GetTargetName( target.id ) .. ' ' .. tostring( i ) .. '/' .. #target.actions )
+										--PrintFF11( "[HAE] c[" .. actor.category .. ']  m ' .. hae_message .. ' e ' .. en .. '(' .. hae_effectId .. ')' .. ' a ' .. this:GetTargetName( actor.actor_id ) .. ' t ' ..  this:GetTargetName( target.id ) .. ' ' .. tostring( i ) .. '/' .. #target.actions )
 									end
 								end
 
@@ -1116,7 +1114,7 @@ local addon =
 										if( Resources.buffs[ hse_effectId ] ~= nil ) then
 											en = Resources.buffs[ hse_effectId ].name
 										end
-										PrintFF11( "[HSE] c[" .. actor.category .. ']  m ' .. hse_message .. ' e ' .. en .. '(' .. hse_effectId .. ')' .. ' a ' .. this:GetTargetName( actor.actor_id ) .. ' t ' ..  this:GetTargetName( target.id ) .. ' ' .. tostring( i ) .. '/' .. #target.actions )
+										--PrintFF11( "[HSE] c[" .. actor.category .. ']  m ' .. hse_message .. ' e ' .. en .. '(' .. hse_effectId .. ')' .. ' a ' .. this:GetTargetName( actor.actor_id ) .. ' t ' ..  this:GetTargetName( target.id ) .. ' ' .. tostring( i ) .. '/' .. #target.actions )
 									end
 								end
 
@@ -1163,7 +1161,7 @@ local addon =
 									-- 282 ミス
 									-- 283 効果なし
 								else
-									PrintFF11( '[UM] c[' .. actor.category .. ']' .. ' s ' .. sn .. '(' .. skillId .. ')' .. ' e ' .. en .. '(' .. effectId .. ')' .. ' m ' .. message .. ' a ' .. this:GetTargetName( actor.actor_id ) .. ' t ' ..  this:GetTargetName( target.id ) .. ' ' .. i .. '/' .. #target.actions )
+									--PrintFF11( '[UM] c[' .. actor.category .. ']' .. ' s ' .. sn .. '(' .. skillId .. ')' .. ' e ' .. en .. '(' .. effectId .. ')' .. ' m ' .. message .. ' a ' .. this:GetTargetName( actor.actor_id ) .. ' t ' ..  this:GetTargetName( target.id ) .. ' ' .. i .. '/' .. #target.actions )
 								end
 							end
 							
@@ -1199,7 +1197,7 @@ local addon =
 				sn = Resources.spells[ spellId ].name
 			end
 
-			PrintFF11( "[Spell Error] " .. sn .. '(' .. spellId .. ')' .. ' to ' .. this:GetTargetName( targetId ) )
+			--PrintFF11( "[Spell Error] " .. sn .. '(' .. spellId .. ')' .. ' to ' .. this:GetTargetName( targetId ) )
 			return
 		end
 		if( #Spells[ spellId ] == 0 ) then
@@ -1255,7 +1253,7 @@ local addon =
 			end
 		
 			if( priorities[ spellId ] == nil ) then
-				PrintFF11( "Dia Bio Error : " .. spellId )
+				--PrintFF11( "Dia Bio Error : " .. spellId )
 			end
 			
 			if( priorities[ spellId ] >  activePriority ) then
@@ -1303,7 +1301,7 @@ local addon =
 					end
 				end
 
-				PrintFF11( 'Song ' .. overlapNow .. ' / ' .. overlapMax .. ' : ' .. spellId )
+				--PrintFF11( 'Song ' .. overlapNow .. ' / ' .. overlapMax .. ' : ' .. spellId )
 
 				if( overlapNow >= overlapMax ) then
 					-- 最も残り時間が短いものを消去する必要がある
@@ -1354,7 +1352,7 @@ local addon =
 					if( Resources.spells[ spellId ] ~= nil ) then
 						sn = Resources.spells[ spellId ].name
 					end
-					PrintFF11( '対象と自分の両方に処理する ' .. sn )
+					--PrintFF11( '対象と自分の両方に処理する ' .. sn )
 
 					for i = 1, #Spells[ spellId ][ 1 ] do
 						this:AddOneSpellEffectToTarget( spellId, targetId, fromPlayer, Spells[ spellId ][ 1 ][ i ][ 1 ], Spells[ spellId ][ 1 ][ i ][ 2 ] )
@@ -1368,7 +1366,7 @@ local addon =
 	AddOneSpellEffectToTarget = function( this, spellId, targetId, fromPlayer, effectId, duration )
 
 		if( effectId == nil or duration == nil ) then
-			PrintFF11( 'Error [4] : SpellId = ' .. spellId )
+			--PrintFF11( 'Error [4] : SpellId = ' .. spellId )
 		end
 
 		if( effectId ~= nil and effectId ~= 0 ) then
@@ -1389,7 +1387,7 @@ local addon =
 				sn = Resources.job_abilities[ abilityId ].name
 			end
 
-			PrintFF11( "[Ability Error] " .. sn .. '(' .. abilityId .. ')' .. ' to ' .. this:GetTargetName( targetId ) )
+			--PrintFF11( "[Ability Error] " .. sn .. '(' .. abilityId .. ')' .. ' to ' .. this:GetTargetName( targetId ) )
 			return
 		end
 		if( #Abilities[ abilityId ] == 0 ) then
@@ -1451,7 +1449,7 @@ local addon =
 				end
 			end
 
-			PrintFF11( "[Skill Error] " .. sn .. '(' .. skillId .. ')' .. ' to ' .. this:GetTargetName( targetId ) )
+			--PrintFF11( "[Skill Error] " .. sn .. '(' .. skillId .. ')' .. ' to ' .. this:GetTargetName( targetId ) )
 			return
 		end
 		if( #Skills[ skillId ] == 0 ) then
@@ -1670,7 +1668,7 @@ local addon =
 			if( Resources.buffs[ effectId ] ~= nil ) then
 				en = Resources.buffs[ effectId ].name
 			end
-			PrintFF11( "Unknown Message to Remove m = " .. message .. ' t = ' .. this:GetTargetName( targetId ) .. ' ' .. en .. '(' .. effectId .. ')' )
+			--PrintFF11( "Unknown Message to Remove m = " .. message .. ' t = ' .. this:GetTargetName( targetId ) .. ' ' .. en .. '(' .. effectId .. ')' )
 		end
 	end,
 
@@ -1923,11 +1921,6 @@ addon.RegisterEvents = function( this )
 								this.effectiveTargets[ playerId ][ effectId ] = { SkillId = 0, EndTime = endTime }	-- 原因となった技能は不明
 							end
 						end
-					end
-
-					if( #els >  0 ) then
-						els = '[B] ' .. els
-						PrintFF11( els )
 					end
 				end
 			end
@@ -2206,15 +2199,15 @@ addon.RegisterEvents = function( this )
 			UI:ResetPosition()
 			UI:ApplyPosition()
 			Save()
-			PrintFF11( "位置を初期化しました。" )
+			--PrintFF11( "位置を初期化しました。" )
 		elseif command == 'l' then
 			UI:SetDraggable( false )
 			Save()
-			PrintFF11( "位置の変更を禁止しました。" )
+			--PrintFF11( "位置の変更を禁止しました。" )
 		elseif command == 'u' then
 			UI:SetDraggable( true )
 			Save()
-			PrintFF11( "位置の変更を許可しました。" )
+			--PrintFF11( "位置の変更を許可しました。" )
 		elseif command == 'c' then
 
 			local mobIds = nil

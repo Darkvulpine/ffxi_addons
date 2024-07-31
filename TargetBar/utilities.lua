@@ -2,7 +2,7 @@ local Resources = require( 'resources' )
 
 local utilities =
 {
-	-- 装備中の装備品のアイテム識別子を取得する
+	-- Gets the item identifier of the currently equipped piece of equipment.
 	GetEquipmentItemId = function( this, category )
 		local allItems =  windower.ffxi.get_items()
 		local bag, index
@@ -43,7 +43,7 @@ local utilities =
     end,
     
 
-	-- プレイヤーの呪歌の重ねがけ可能回数を取得する
+	-- Gets the number of times the player can stack the song
 	GetSingingLevel = function( this )
 		local itemId = this:GetEquipmentItemId( 3 )
 --		PrintFF11( "Range:" .. itemId )
